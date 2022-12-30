@@ -6,7 +6,7 @@ namespace MyMediatRNotification
     public static class ServiceRegistrar
     {
         
-        public static void AddMyNotificationHandler(this IServiceCollection services, Assembly assembly)
+        public static void AddMyNotificationMediator(this IServiceCollection services, Assembly assembly)
         {
             var notificationMediator = new NotificationMediator();
             var notificationHandlerTypes = assembly
@@ -15,12 +15,12 @@ namespace MyMediatRNotification
 
             foreach (var notificationHandlerType in notificationHandlerTypes)
             {
-               // var notificationType = notificationHandlerType.GetInterfaces().First().GetGenericArguments().First();
-               // notificationMediator.Register((INotificationHandler<INotification>)Activator.CreateInstance(notificationHandlerType)!);
-               // notificationMediator.Register<INotification>(notificationHandlerType);
+                var notificationType = notificationHandlerType.GetInterfaces().First().GetGenericArguments().First();
+                var registerMethod = typeof(NotificationMediator).GetMethod("Register").MakeGenericMethod(notificationType);
+                registerMethod.Invoke(notificationMediator, new object[] { Activator.CreateInstance(notificationHandlerType) });
             }
 
-            services.AddSingleton(notificationMediator);
+            services.AddSingleton<INotificationMediator>(notificationMediator);
         }
     }
 }

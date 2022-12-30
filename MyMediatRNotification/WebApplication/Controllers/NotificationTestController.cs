@@ -8,10 +8,10 @@ namespace WebApp.Controllers
     [Route("[controller]")]
     public class NotificationTestController : Controller
     {
-        private readonly NotificationMediator _mediator;
+        private readonly INotificationMediator _mediator;
 
 
-        public NotificationTestController(NotificationMediator mediator)
+        public NotificationTestController(INotificationMediator mediator)
         {
             _mediator = mediator;
         }

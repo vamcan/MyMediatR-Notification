@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 // Get the assembly that contains your notification handlers
 var assembly = Assembly.GetExecutingAssembly();
 //Register Our Service
-builder.Services.AddMyNotificationHandler(assembly);
+builder.Services.AddMyNotificationMediator(assembly);
 
 var app = builder.Build();
 
