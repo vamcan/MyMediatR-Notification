@@ -1,7 +1,6 @@
 ﻿namespace MyMediatRNotification
 {
-    public class Class1
+    public interface INotification
     {
-
     }
 }

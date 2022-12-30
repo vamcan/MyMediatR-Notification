@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMediatRNotification", "MyMediatRNotification\MyMediatRNotification.csproj", "{BBCD9428-3EB0-4B1C-90B8-C05A2E74144F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{CBA2D401-0F5B-4BAA-A9D8-47EF39E5C371}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApplication\WebApp.csproj", "{CBA2D401-0F5B-4BAA-A9D8-47EF39E5C371}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

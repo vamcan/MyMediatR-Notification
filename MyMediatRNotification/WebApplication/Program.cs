@@ -1,3 +1,6 @@
+using MyMediatRNotification;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+// Get the assembly that contains your notification handlers
+var assembly = Assembly.GetExecutingAssembly();
+//Register Our Service
+builder.Services.AddMyNotificationHandler(assembly);
 
 var app = builder.Build();
 
